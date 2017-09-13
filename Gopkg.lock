@@ -8,6 +8,24 @@
   revision = "17ce1425424ab154092bbb43af630bd647f3bb0d"
 
 [[projects]]
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  revision = "b78744579491c1ceeaaa3b40205e56b0591b93a3"
+
+[[projects]]
+  name = "github.com/spf13/pflag"
+  packages = ["."]
+  revision = "e57e3eeb33f795204c1ca35f56c44f83227c6e66"
+  version = "v1.0.0"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
@@ -34,6 +52,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2f7c8cc3b616eb94209926fe27caf38d77edd2c028d0f186b11f0078f0ad7415"
+  inputs-digest = "928299a3d07c8a4cf5b49fd2ef0e7385da74f2c5537f72a3e21b12c6f8d221cb"
   solver-name = "gps-cdcl"
   solver-version = 1
