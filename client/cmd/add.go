@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"log"
+	"os"
 	"strconv"
 
 	pb "github.com/h3poteto/grpc_example/proto"
@@ -28,7 +29,9 @@ func add(cmd *cobra.Command, args []string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	conn, err := grpc.Dial("127.0.0.1:11111", grpc.WithInsecure())
+	addr := os.Getenv("SERVER_IP")
+	port := os.Getenv("SERVER_PORT")
+	conn, err := grpc.Dial(addr+":"+port, grpc.WithInsecure())
 	if err != nil {
 		log.Fatal(err)
 	}

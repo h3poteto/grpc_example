@@ -4,6 +4,7 @@ import (
 	"golang.org/x/net/context"
 	"log"
 	"net"
+	"os"
 	"sync"
 
 	"google.golang.org/grpc"
@@ -36,7 +37,8 @@ func (cs *customerService) AddPerson(c context.Context, p *pb.Person) (*pb.Respo
 }
 
 func main() {
-	lis, err := net.Listen("tcp", ":11111")
+	port := os.Getenv("SERVER_PORT")
+	lis, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("faild to listen: %v", err)
 	}
