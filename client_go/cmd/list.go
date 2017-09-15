@@ -24,8 +24,6 @@ func listCmd() *cobra.Command {
 func list(cmd *cobra.Command, args []string) {
 	addr := os.Getenv("SERVER_IP")
 	port := os.Getenv("SERVER_PORT")
-	log.Println(addr)
-	log.Println(port)
 	conn, err := grpc.Dial(addr+":"+port, grpc.WithInsecure())
 	if err != nil {
 		log.Fatal(err)

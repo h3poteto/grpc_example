@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/h3poteto/grpc_example/client/cmd"
+	"github.com/h3poteto/grpc_example/client_go/cmd"
 )
 
 func main() {
