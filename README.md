@@ -1,12 +1,30 @@
 # gRPC example
 
+## configure
+Set ip address and port in `.envrc`, for example:
+
+```bash
+export SERVER_IP=127.0.0.1
+export SERVER_PORT=9090
+```
+
 ## server
 ### go
 
-Generate a server interface.
+Generate a server interface, and start gRPC server.
 
-```bash
-$  protoc --go_out=plugins=grpc:./server/go ./proto/customer_service.proto
+```
+$ protoc --go_out=plugins=grpc:./server/go ./proto/customer_service.proto
+$ go run server/go/server.go
+```
+
+### scala
+
+Generate a server interface, and start gRPC server.
+
+```
+$ sbt "compile"
+$ sbt "run"
 ```
 
 ## client
@@ -14,6 +32,6 @@ $  protoc --go_out=plugins=grpc:./server/go ./proto/customer_service.proto
 
 Generate a ruby interface.
 
-```bash
+```
 $ grpc_tools_ruby_protoc -I ./proto --ruby_out=client/ruby/lib --grpc_out=client/ruby/lib ./proto/customer_service.proto
 ```

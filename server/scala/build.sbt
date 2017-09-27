@@ -17,4 +17,4 @@ PB.targets in Compile := Seq(
   scalapb.gen() -> ((sourceManaged in Compile).value / "protobuf-scala")
 )
 
-
+PB.protoSources in Compile += (baseDirectory in LocalRootProject).value / "../../proto"
