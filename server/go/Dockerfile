@@ -25,7 +25,8 @@ RUN chown -R go:go ${GOPATH}
 USER go
 
 RUN set -x \
-    && go get -u github.com/golang/dep/...
+    && go get -u github.com/golang/dep/... \
+    && go get github.com/golang/protobuf/protoc-gen-go
 
 ENV SERVER_PORT 9090
 
@@ -35,7 +36,7 @@ WORKDIR ${APPROOT}
 
 RUN set -x \
     && dep ensure \
-    && cd server \
+    && cd server/go \
     && go build -o server
 
-CMD server/server
+CMD server/go/server
