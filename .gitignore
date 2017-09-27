@@ -1,3 +1,5 @@
 vendor
+client/ruby/lib
+server/go/proto
 server/scala/project
 server/scala/target
