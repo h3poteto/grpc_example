@@ -8,10 +8,22 @@
   revision = "17ce1425424ab154092bbb43af630bd647f3bb0d"
 
 [[projects]]
+  name = "github.com/inconshreveable/mousetrap"
+  packages = ["."]
+  revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
+  version = "v1.0"
+
+[[projects]]
   branch = "master"
-  name = "github.com/h3poteto/grpc_example"
-  packages = ["proto"]
-  revision = "b1398123900ea94da007f3d986d1127257beb4c6"
+  name = "github.com/spf13/cobra"
+  packages = ["."]
+  revision = "b78744579491c1ceeaaa3b40205e56b0591b93a3"
+
+[[projects]]
+  name = "github.com/spf13/pflag"
+  packages = ["."]
+  revision = "e57e3eeb33f795204c1ca35f56c44f83227c6e66"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
@@ -40,6 +52,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b6610fd8748d05ae48a477c021edaba28ea4d56df9ba5ac2d82088b546386beb"
+  inputs-digest = "928299a3d07c8a4cf5b49fd2ef0e7385da74f2c5537f72a3e21b12c6f8d221cb"
   solver-name = "gps-cdcl"
   solver-version = 1

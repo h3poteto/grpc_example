@@ -9,7 +9,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	pb "github.com/h3poteto/grpc_example/proto"
+	pb "github.com/h3poteto/grpc_example/server/go/proto"
 )
 
 type customerService struct {
