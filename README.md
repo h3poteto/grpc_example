@@ -23,6 +23,7 @@ $ go run server/go/server.go
 Generate a server interface, and start gRPC server.
 
 ```
+$ cd server/scala
 $ sbt "compile"
 $ sbt "run"
 ```
