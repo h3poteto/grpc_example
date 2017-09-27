@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	pb "github.com/h3poteto/grpc_example/proto"
+	pb "github.com/h3poteto/grpc_example/server/go/proto"
 	"github.com/spf13/cobra"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
