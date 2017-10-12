@@ -14,7 +14,13 @@ export SERVER_PORT=9090
 Generate a server interface, and start gRPC server.
 
 ```
-$ protoc --go_out=plugins=grpc:./server/go ./proto/customer_service.proto
+$ protoc  \
+        --proto_path=${GOPATH}/src \
+        --proto_path=${GOPATH}/src/github.com/gogo/protobuf/protobuf \
+        --proto_path=. \
+        --go_out=plugins=grpc:./server/go \
+        --govalidators_out=gogoimport=true:./server/go \
+        proto/*.proto
 $ go run server/go/server.go
 ```
 

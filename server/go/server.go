@@ -9,6 +9,8 @@ import (
 
 	"google.golang.org/grpc"
 
+	"github.com/grpc-ecosystem/go-grpc-middleware"
+	"github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	pb "github.com/h3poteto/grpc_example/server/go/proto"
 )
 
@@ -42,7 +44,14 @@ func main() {
 	if err != nil {
 		log.Fatalf("faild to listen: %v", err)
 	}
-	server := grpc.NewServer()
+	server := grpc.NewServer(
+		grpc.StreamInterceptor(grpc_middleware.ChainStreamServer(
+			grpc_validator.StreamServerInterceptor(),
+		)),
+		grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(
+			grpc_validator.UnaryServerInterceptor(),
+		)),
+	)
 	pb.RegisterCustomerServiceServer(server, new(customerService))
 	server.Serve(lis)
 }

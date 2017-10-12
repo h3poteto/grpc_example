@@ -2,16 +2,34 @@
 
 
 [[projects]]
+  name = "github.com/gogo/protobuf"
+  packages = ["proto","protoc-gen-gogo/descriptor"]
+  revision = "342cbe0a04158f6dcb03ca0079991a51a4248c02"
+  version = "v0.5"
+
+[[projects]]
   branch = "master"
   name = "github.com/golang/protobuf"
   packages = ["proto","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
   revision = "17ce1425424ab154092bbb43af630bd647f3bb0d"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/grpc-ecosystem/go-grpc-middleware"
+  packages = [".","validator"]
+  revision = "6d3547c644afb325c16df96e3c7177ea6e2fdebd"
+
+[[projects]]
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
   version = "v1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mwitkow/go-proto-validators"
+  packages = ["."]
+  revision = "a55ca57f374a8846924b030f534d8b8211508cf0"
 
 [[projects]]
   branch = "master"
@@ -52,6 +70,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "928299a3d07c8a4cf5b49fd2ef0e7385da74f2c5537f72a3e21b12c6f8d221cb"
+  inputs-digest = "7ec3cd41b0e5e334163095adcff01602a1b3739db2918f310f401bc69a1a93df"
   solver-name = "gps-cdcl"
   solver-version = 1
