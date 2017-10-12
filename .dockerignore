@@ -1,1 +1,7 @@
 client/
+vendor/
+server/go/Dockerfile
+server/scala/target
+server/scala/project/project
+server/scala/project/target
+server/scala/Dockerfile

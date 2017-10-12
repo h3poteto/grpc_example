@@ -34,5 +34,8 @@ $ sbt "run"
 Generate a ruby interface.
 
 ```
+$ brew install protobuf
+$ gem install grpc
+$ gem install grpc-tools
 $ grpc_tools_ruby_protoc -I ./proto --ruby_out=client/ruby/lib --grpc_out=client/ruby/lib ./proto/customer_service.proto
 ```

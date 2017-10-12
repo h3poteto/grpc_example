@@ -2,6 +2,8 @@ import com.trueaccord.scalapb.compiler.Version.{grpcJavaVersion, scalapbVersion,
 
 name := """grpcScalasample"""
 
+version := "1.0"
+
 scalaVersion := "2.12.3"
 
 lazy val root = project.in(file("."))
@@ -18,3 +20,17 @@ PB.targets in Compile := Seq(
 )
 
 PB.protoSources in Compile += (baseDirectory in LocalRootProject).value / "../../proto"
+
+assemblyMergeStrategy in assembly := {
+  case PathList("javax", "servlet", xs @ _*)         => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".properties" => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".xml" => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".types" => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".class" => MergeStrategy.first
+  case "application.conf"                            => MergeStrategy.concat
+  case "unwanted.txt"                                => MergeStrategy.discard
+  case x =>
+    val oldStrategy = (assemblyMergeStrategy in assembly).value
+    oldStrategy(x)
+}
+

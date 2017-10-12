@@ -6,7 +6,7 @@ require 'grpc'
 require 'customer_service_services_pb'
 
 def main
-  stub = Proto::CustomerService::Stub.new("127.0.0.1:9090", :this_channel_is_insecure)
+  stub = Proto::CustomerService::Stub.new("#{ENV["SERVER_IP"]}:#{ENV["SERVER_PORT"]}", :this_channel_is_insecure)
   if ARGV.size == 2
     stub.add_person(Proto::Person.new(name: ARGV[0], age: ARGV[1].to_i))
   else
