@@ -14,12 +14,6 @@
   revision = "17ce1425424ab154092bbb43af630bd647f3bb0d"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/grpc-ecosystem/go-grpc-middleware"
-  packages = [".","validator"]
-  revision = "6d3547c644afb325c16df96e3c7177ea6e2fdebd"
-
-[[projects]]
   name = "github.com/inconshreveable/mousetrap"
   packages = ["."]
   revision = "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75"
@@ -70,6 +64,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7ec3cd41b0e5e334163095adcff01602a1b3739db2918f310f401bc69a1a93df"
+  inputs-digest = "b10a753d9327865fa33249a09fd16d03ba1cce92ef0a5c59f1e7c61d32884ace"
   solver-name = "gps-cdcl"
   solver-version = 1
