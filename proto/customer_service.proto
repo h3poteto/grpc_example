@@ -16,4 +16,5 @@ message RequestType {
 message Person {
   string name = 1;
   int32 age = 2;
+  repeated string tags = 3;
 }

@@ -13,6 +13,7 @@ class Servicer(customer_service_pb2_grpc.CustomerServiceServicer):
         person = {
             'name': request.name,
             'age': request.age,
+            'tags': request.tags,
         }
         persons.append(person)
         print('Person added: ', person)
@@ -22,7 +23,7 @@ class Servicer(customer_service_pb2_grpc.CustomerServiceServicer):
     def ListPerson(self, request, context):
         print(persons)
         for person in persons:
-            yield customer_service_pb2.Person(name=person['name'], age=person['age'])
+            yield customer_service_pb2.Person(name=person['name'], age=person['age'], tags=person['tags'])
 
 
 def serve():

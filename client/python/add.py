@@ -7,7 +7,7 @@ from proto import customer_service_pb2_grpc
 def run():
     channel = grpc.insecure_channel(os.environ['SERVER_IP'] + ':' + os.environ['SERVER_PORT'])
     stub = customer_service_pb2_grpc.CustomerServiceStub(channel)
-    stub.AddPerson(customer_service_pb2.Person(name='akira', age=12))
+    stub.AddPerson(customer_service_pb2.Person(age=20, tags=['go', 'ruby']))
     print('Added')
 
 
