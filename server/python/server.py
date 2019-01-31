@@ -16,30 +16,30 @@ class Servicer(customer_service_pb2_grpc.CustomerServiceServicer):
             'tags': request.tags,
         }
         persons.append(person)
-        print('Person added: ', person)
+        print('Person added: {}'.format(person), flush=True)
 
         return customer_service_pb2.ResponseType()
 
     def ListPerson(self, request, context):
-        print(persons)
+        print(persons, flush=True)
         for person in persons:
             yield customer_service_pb2.Person(name=person['name'], age=person['age'], tags=person['tags'])
 
 
 def serve():
-    print('Starting server...')
+    print('Starting server...', flush=True)
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     customer_service_pb2_grpc.add_CustomerServiceServicer_to_server(
         Servicer(), server
     )
     server.add_insecure_port(os.environ['SERVER_IP'] + ':' + os.environ['SERVER_PORT'])
     server.start()
-    print('Listen :' + os.environ['SERVER_PORT'])
+    print('Listen :' + os.environ['SERVER_PORT'], flush=True)
     try:
         while True:
             time.sleep(3600)
     except KeyboardInterrupt:
-        print('Stop server')
+        print('Stop server', flush=True)
         server.stop(0)
 
 
