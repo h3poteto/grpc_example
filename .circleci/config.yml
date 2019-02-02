@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    environment:
+      PYTHON_SERVER_REPOSITORY: h3poteto/grpc_example-server-python
+      PYTHON_CLIENT_REPOSITORY: h3poteto/grpc_example-client-python
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+            docker build -t $PYTHON_SERVER_REPOSITORY:$CIRCLE_BRANCH -f server/python/Dockerfile .
+            docker build -t $PYTHON_CLIENT_REPOSITORY:$CIRCLE_BRANCH -f client/python/Dockerfile .
+      - run:
+          name: Push
+          command: |
+            docker login -u $HUB_USER -p $HUB_PASSWORD
+            docker push $PYTHON_SERVER_REPOSITORY:$CIRCLE_BRANCH
+            docker push $PYTHON_CLIENT_REPOSITORY:$CIRCLE_BRANCH
