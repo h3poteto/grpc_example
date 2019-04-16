@@ -16,7 +16,7 @@ $ brew install protobuf
 
 ## server
 ### python
-Install `grpcio-tools`:
+Install `grpcio grpcio-tools`:
 
 ```bash
 $ pip install grpcio-tools
