@@ -16,10 +16,10 @@ $ brew install protobuf
 
 ## server
 ### python
-Install `grpcio grpcio-tools`:
+Install `grpcio` and `grpcio-tools`:
 
 ```bash
-$ pip install grpcio-tools
+$ pip install grpcio grpcio-tools
 ```
 
 Generate a server interface, and start gRPC server.
